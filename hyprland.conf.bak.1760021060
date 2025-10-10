@@ -1,0 +1,35 @@
+# Learn how to configure Hyprland: https://wiki.hyprland.org/Configuring/
+
+# Use defaults Omarchy defaults (but don't edit these directly!)
+source = ~/.local/share/omarchy/default/hypr/autostart.conf
+source = ~/.local/share/omarchy/default/hypr/bindings/media.conf
+source = ~/.local/share/omarchy/default/hypr/bindings/tiling.conf
+source = ~/.local/share/omarchy/default/hypr/bindings/utilities.conf
+source = ~/.local/share/omarchy/default/hypr/envs.conf
+source = ~/.local/share/omarchy/default/hypr/looknfeel.conf
+source = ~/.local/share/omarchy/default/hypr/input.conf
+source = ~/.local/share/omarchy/default/hypr/windows.conf
+source = ~/.config/omarchy/current/theme/hyprland.conf
+
+# Change your own setup in these files (and overwrite any settings from defaults!)
+source = ~/.config/hypr/monitors.conf
+source = ~/.config/hypr/input.conf
+source = ~/.config/hypr/bindings.conf
+source = ~/.config/hypr/envs.conf
+source = ~/.config/hypr/looknfeel.conf
+source = ~/.config/hypr/autostart.conf
+
+# NVIDIA environment variables
+env = NVD_BACKEND,direct
+env = LIBVA_DRIVER_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+
+# Make gsimplecal float and size it
+windowrulev2 = float, class:^(gsimplecal)$
+windowrulev2 = size 360 340, class:^(gsimplecal)$
+
+# Pin it near the top-right of the CURRENT monitor you clicked.
+# 'move onscreen cursor 100% 0' places the window so its RIGHT edge aligns with cursor
+# and its TOP edge aligns with cursor row; then we nudge it a bit left/down.
+windowrulev2 = move onscreen cursor 100% 0, class:^(gsimplecal)$
+windowrulev2 = move active 10 10, class:^(gsimplecal)$
